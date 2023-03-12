@@ -8,8 +8,8 @@ interface Props {
 export default function HeaderRow({ Icon, title }: Props) {
   return (
     <div>
-      <Icon className="w-6 h-6 mx-auto sm:w-6 sm:h-6 md:w-10 md:h-10" />
-      <p className="hidden sm:inline-block md:text-lg">{title}</p>
+      <Icon className="w-6 h-6 mx-auto md:w-7 md:h-7" />
+      <p className="hidden sm:inline-block sm:text-sm md:text-base pt-1">{title}</p>
     </div>
   );
 }
