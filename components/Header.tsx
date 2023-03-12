@@ -13,9 +13,9 @@ export default function Header() {
   return (
     <div className="border-b border-b-slate-900">
       <Image
-        className="w-28 sm:w-36 md:w-48 h-auto mx-auto mt-4"
-        width={50}
-        height={50}
+        className="w-28 sm:w-36 md:w-60 h-auto mx-auto mt-4"
+        width={500}
+        height={500}
         src="/Logo.png"
         alt=""
       />
