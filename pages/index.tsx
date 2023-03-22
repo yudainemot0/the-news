@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Article from "@/components/Article";
+import Weather from "@/components/Weather ";
 
 interface Article {
   title: string;
@@ -11,10 +12,20 @@ interface Article {
 
 interface HomeProps {
   topArticles: Article[];
+  weatherData: {
+    main: {
+      temp: number;
+    };
+    weather: {
+      description: string;
+      icon: string;
+    }[];
+  };
 }
 
 export default function Home(props: HomeProps) {
   console.log(props.topArticles);
+  console.log(props.weatherData);
 
   const [mainArticle, ...otherArticles] = props.topArticles;
 
@@ -27,7 +38,7 @@ export default function Home(props: HomeProps) {
       </Head>
       <main>
         <Header />
-        <div className="mx-8 sm:mx-12 lg:mx-32 mt-4 sm:mt-6 md:mt-10">
+        <div className="mx-8 sm:mx-12 lg:mx-32 mt-4 sm:mt-6 md:mt-10 flex gap-5">
           <div>
             {/* Main article */}
             <div className="list-none">
@@ -40,7 +51,11 @@ export default function Home(props: HomeProps) {
               ))}
             </ul>
           </div>
-          <div>{/* chart */}</div>
+          <div>
+            {/* chart */}
+            {/* weather */}
+            <Weather weatherData={props.weatherData} />
+          </div>
         </div>
       </main>
     </>
@@ -48,15 +63,22 @@ export default function Home(props: HomeProps) {
 }
 
 export const getStaticProps = async () => {
-  const topRes = await fetch(
+  const newsApiRes = await fetch(
     `https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=d348775997b145a8be32991e670bef43`
   );
-  const topJson = await topRes.json();
-  const topArticles: Article[] = topJson?.articles;
+  const newsApiJson = await newsApiRes.json();
+  const topArticles: Article[] = newsApiJson?.articles;
+
+  const API_key = "717d7fee9968095039fb3bf151156a94";
+  const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=33.8218&lon=130.5415&appid=${API_key}&lang=ja&units=metric`;
+  const weatherRes = await fetch(API_URL);
+  const weatherJson = await weatherRes.json();
+  const weatherData = weatherJson;
 
   return {
     props: {
       topArticles,
+      weatherData,
     },
     revalidate: 60 * 10,
   };
