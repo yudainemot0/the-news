@@ -1,30 +1,3 @@
-// interface WeatherProps {
-//   weatherData: {
-//     main: {
-//       temp: number;
-//     };
-//     weather: {
-//       description: string;
-//       icon: string;
-//     };
-// }
-
-// export default function Weather({ weatherData }: WeatherProps) {
-//   return (
-//     <div className="flex items-center justify-center mt-8">
-//       <img
-//         className="w-16 h-16 mr-2"
-//         // src={`http://openweathermap.org/img/w/${weatherData.icon}.png`}
-//         alt={weatherData.weather.description}
-//       />
-//       <div>
-//         <p className="text-2xl font-bold">{weatherData.main.temp}°C</p>
-//         <p className="text-sm">{weatherData.weather.description}</p>
-//       </div>
-//     </div>
-//   );
-// }
-
 interface WeatherProps {
   weatherData: {
     main: {

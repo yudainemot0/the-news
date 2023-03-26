@@ -23,6 +23,7 @@ interface HomeProps {
   };
 }
 
+
 export default function Home(props: HomeProps) {
   console.log(props.topArticles);
   console.log(props.weatherData);
@@ -52,9 +53,9 @@ export default function Home(props: HomeProps) {
             </ul>
           </div>
           <div>
-            {/* chart */}
             {/* weather */}
             <Weather weatherData={props.weatherData} />
+            {/* chart */}
           </div>
         </div>
       </main>
