@@ -2,6 +2,8 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import Article from "@/components/Article";
 import Weather from "@/components/Weather ";
+import Stock from "@/components/Stock";
+
 
 interface Article {
   title: string;
@@ -22,7 +24,6 @@ interface HomeProps {
     }[];
   };
 }
-
 
 export default function Home(props: HomeProps) {
   console.log(props.topArticles);
@@ -55,7 +56,8 @@ export default function Home(props: HomeProps) {
           <div>
             {/* weather */}
             <Weather weatherData={props.weatherData} />
-            {/* chart */}
+            {/* Stockchart */}
+            <Stock />
           </div>
         </div>
       </main>
