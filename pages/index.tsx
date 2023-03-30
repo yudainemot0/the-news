@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Article from "@/components/Article";
 import Weather from "@/components/Weather ";
 import Stock from "@/components/Stock";
+import Chart from "@/components/Chart";
 
 
 interface Article {
@@ -58,6 +59,7 @@ export default function Home(props: HomeProps) {
             <Weather weatherData={props.weatherData} />
             {/* Stockchart */}
             <Stock />
+            <Chart />
           </div>
         </div>
       </main>
