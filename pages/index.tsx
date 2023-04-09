@@ -78,13 +78,12 @@ export default function Home(props: HomeProps) {
 
 export const getStaticProps = async () => {
   const newsApiRes = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=d348775997b145a8be32991e670bef43`
+    `https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=${process.env.NewsAPI_KEY}`
   );
   const newsApiJson = await newsApiRes.json();
   const topArticles: Article[] = newsApiJson?.articles;
 
-  const API_key = "717d7fee9968095039fb3bf151156a94";
-  const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=33.8218&lon=130.5415&appid=${API_key}&lang=ja&units=metric`;
+  const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=33.8218&lon=130.5415&appid=${process.env.WeatherAPI_KEY}&lang=ja&units=metric`;
   const weatherRes = await fetch(API_URL);
   const weatherJson = await weatherRes.json();
   const weatherData = weatherJson;
