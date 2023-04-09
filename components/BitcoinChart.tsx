@@ -19,7 +19,7 @@ export default function BitcoinChart() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get(
-        "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=365"
+        "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=180"
       );
       console.log(result.data);
       const chartData = {
