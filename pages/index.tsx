@@ -4,6 +4,11 @@ import Article from "@/components/Article";
 import Weather from "@/components/Weather ";
 import StockPrice from "@/components/StockPrice";
 import StockChart from "@/components/StockChart";
+import BitcoinPrice from "@/components/BitcoinPrice";
+import EthereumPrice from "@/components/EthereumPrice";
+import BitcoinChart from "@/components/BitcoinChart";
+import EthereumChart from "@/components/EthereumChart";
+
 
 interface Article {
   title: string;
@@ -56,9 +61,14 @@ export default function Home(props: HomeProps) {
           <div>
             {/* weather */}
             <Weather weatherData={props.weatherData} />
-            {/* Stockchart */}
+            {/* Stock */}
             <StockPrice />
             <StockChart />
+            {/* Crypt */}
+            <BitcoinPrice />
+            <BitcoinChart />
+            <EthereumPrice />
+            <EthereumChart />
           </div>
         </div>
       </main>
