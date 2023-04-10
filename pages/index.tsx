@@ -9,7 +9,6 @@ import EthereumPrice from "@/components/EthereumPrice";
 import BitcoinChart from "@/components/BitcoinChart";
 import EthereumChart from "@/components/EthereumChart";
 
-
 interface Article {
   title: string;
   description: string;
@@ -27,6 +26,10 @@ interface HomeProps {
       description: string;
       icon: string;
     }[];
+    wind: {
+      speed: number;
+      deg: number;
+    };
   };
 }
 
@@ -86,7 +89,11 @@ export const getStaticProps = async () => {
   const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=33.8218&lon=130.5415&appid=${process.env.WeatherAPI_KEY}&lang=ja&units=metric`;
   const weatherRes = await fetch(API_URL);
   const weatherJson = await weatherRes.json();
-  const weatherData = weatherJson;
+  const weatherData = {
+    main: weatherJson.main,
+    weather: weatherJson.weather,
+    wind: weatherJson.wind,
+  };
 
   return {
     props: {
@@ -96,3 +103,4 @@ export const getStaticProps = async () => {
     revalidate: 60 * 10,
   };
 };
+
