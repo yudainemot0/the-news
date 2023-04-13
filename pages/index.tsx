@@ -55,7 +55,7 @@ export default function Home(props: HomeProps) {
               <Article article={mainArticle} />
             </div>
             {/* Other articles */}
-            <ul className="grid grid-cols-3 gap-10">
+            <ul className="grid grid-cols-3 gap-3">
               {otherArticles.map((article, id) => (
                 <Article key={id} article={article} />
               ))}

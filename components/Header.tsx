@@ -3,6 +3,8 @@ import {
   NewspaperIcon,
   ComputerDesktopIcon,
   GlobeAltIcon,
+  BeakerIcon,
+  IdentificationIcon,
   TrophyIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
@@ -22,9 +24,11 @@ export default function Header() {
       <div className="flex justify-around items-center mt-3 mb-1 mx-auto max-w-7xl">
         <div className="flex space-x-3 sm:space-x-6 md:space-x-10">
           <HeaderRow Icon={GlobeAltIcon} title="TOP" />
-          <HeaderRow Icon={NewspaperIcon} title="Business" />
+          <HeaderRow Icon={NewspaperIcon} title="General" />
           <HeaderRow Icon={ComputerDesktopIcon} title="Tecnology" />
-          <HeaderRow Icon={PresentationChartLineIcon} title="Market" />
+          <HeaderRow Icon={PresentationChartLineIcon} title="Business" />
+          <HeaderRow Icon={BeakerIcon} title="Science" />
+          <HeaderRow Icon={IdentificationIcon} title="Health" />
           <HeaderRow Icon={TrophyIcon} title="Sports" />
         </div>
         <div className="flex items-center space-x-2 bg-gray-100 p-1 sm:p-3 rounded-full">
