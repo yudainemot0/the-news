@@ -1,7 +1,10 @@
-export default function() {
-    return (
-        <div>
-            General
-        </div>
-    );
+import Header from "@/components/Header";
+
+export default function General() {
+  return (
+    <>
+      <Header />
+      <div>General</div>
+    </>
+  );
 }

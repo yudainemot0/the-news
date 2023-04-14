@@ -1,7 +1,10 @@
-export default function() {
-    return (
-        <div>
-            Science
-        </div>
-    );
+import Header from "@/components/Header";
+
+export default function Science() {
+  return (
+    <>
+      <Header />
+      <div>Science</div>
+    </>
+  );
 }
