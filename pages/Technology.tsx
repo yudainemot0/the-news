@@ -9,11 +9,11 @@ interface Article {
   url: string;
 }
 
-interface ScienceProps {
+interface TechnologyProps {
   topArticles: Article[];
 }
 
-export default function Science(props: ScienceProps) {
+export default function Technology(props: TechnologyProps) {
   console.log(props.topArticles);
   const [mainArticle, ...otherArticles] = props.topArticles;
 
@@ -47,7 +47,7 @@ export default function Science(props: ScienceProps) {
 
 export const getStaticProps = async () => {
   const newsApiRes = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=us&category=science&pageSize=10&apiKey=${process.env.NewsAPI_KEY}`
+    `https://newsapi.org/v2/top-headlines?country=us&category=technology&pageSize=10&apiKey=${process.env.NewsAPI_KEY}`
   );
   const newsApiJson = await newsApiRes.json();
   const topArticles: Article[] = newsApiJson?.articles;

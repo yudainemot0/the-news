@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Header from "@/components/Header";
 import Article from "@/components/Article";
 import Weather from "@/components/Weather ";

@@ -35,8 +35,8 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/Tecnology">
-              <HeaderRow Icon={ComputerDesktopIcon} title="Tecnology" />
+            <Link href="/Technology">
+              <HeaderRow Icon={ComputerDesktopIcon} title="Technology" />
             </Link>
           </li>
           <li>
