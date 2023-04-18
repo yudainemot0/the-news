@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Article from "@/components/Article";
 import PageHead from "@/components/PageHead";
-import serialize from "serialize-javascript";
 
 interface Article {
   title: string;

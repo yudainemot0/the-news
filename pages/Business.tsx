@@ -54,7 +54,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      topArticles,
+      topArticles: JSON.parse(JSON.stringify(topArticles)),
     },
     revalidate: 60 * 10,
   };
