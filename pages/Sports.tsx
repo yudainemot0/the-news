@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Article from "@/components/Article";
 import PageHead from "@/components/PageHead";
+import serialize from "serialize-javascript";
 
 interface Article {
   title: string;
@@ -54,8 +55,9 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      topArticles,
+      topArticles: JSON.parse(JSON.stringify(topArticles)),
     },
     revalidate: 60 * 10,
   };
 };
+
