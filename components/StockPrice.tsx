@@ -37,7 +37,9 @@ export default function StockPrice() {
   return (
     <>
       <div className="p-4">
-        <h1 className="text-2xl font-bold">{symbol}</h1>
+        <h1 className="text-2xl font-bold">
+          S&P500
+        </h1>
         <h2 className="text-lg font-medium">${price}</h2>
       </div>
     </>

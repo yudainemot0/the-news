@@ -23,6 +23,7 @@ export default function Header() {
         alt=""
       />
       <div className="flex justify-around items-center mt-3 mb-1 mx-auto max-w-7xl">
+        {/* icon list */}
         <ul className="flex space-x-3 sm:space-x-6 md:space-x-10">
           <li>
             <Link href="/">
@@ -60,6 +61,7 @@ export default function Header() {
             </Link>
           </li>
         </ul>
+        {/* search */}
         <div className="flex items-center space-x-2 bg-gray-100 p-1 sm:p-3 rounded-full">
           <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
           <input
@@ -68,6 +70,8 @@ export default function Header() {
             className="flex-1 outline-none bg-transparent text-xs sm:text-base"
           />
         </div>
+
+        <div>{/* weather */}</div>
       </div>
     </div>
   );
